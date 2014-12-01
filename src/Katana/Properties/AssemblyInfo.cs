@@ -6,9 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Owin support for Katana")]
+
 [assembly: AssemblyDescription("Makes Katana 3.x compatible with the latest OWIN specification.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("naughtyProd Limited")]
 [assembly: AssemblyProduct("OpenRasta.Owin")]
 [assembly: AssemblyCopyright("Copyright © Sebastien Lambla 2014")]
 [assembly: AssemblyTrademark("OpenRasta is a registered trademark of naughtyProd Limited. All rights reserved.")]
