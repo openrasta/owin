@@ -1,4 +1,4 @@
-version: 0.1.{build}-pre
+version: 0.1.{build}
 
 nuget:
   project_feed: true
@@ -16,3 +16,10 @@ test:
 build:
   publish_nuget: true
   publish_nuget_symbols: true
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "0.1"
+  assembly_file_version: "0.1.{build}"
+  assembly_informational_version: "{version}-pre"
