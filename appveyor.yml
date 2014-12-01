@@ -3,7 +3,7 @@ version: 0.1.{build}-pre
 nuget:
   project_feed: true
 
-before-build:
+before_build:
   - nuget restore src/owin.sln
 
 platform: Any CPU
