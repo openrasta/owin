@@ -32,9 +32,68 @@ Or from any shell window, use `nuget.exe`.
 nuget install OpenRasta.Owin -pre
 ```
 
+## Work in progress
+
+The API is currently in flux. The dependency on Microsoft.Owin and Owin is
+temporary until the full-fledged object-model is released later on this year.
+
+At terms, OpenRasta.Owin should have dependencies on nothing.
+
+### Writing OWIN-compliant middleware using delegates
+
+
+```csharp
+...
+public void Configure(BuildFunc app)
+{
+  app.Use(properties => next => async context => {
+    Debug.WriteLine("Before");
+    await nest(context);
+    Debug.WriteLine("After");
+  });
+}
+```
+
+### Writing owin-compliant middleware using base classes
+
+Using OpenRasta.Owin, it's easy to write OWIN-compliant middleware.
+
+First, you need to write the middleware, and there's a base-class for that,
+`AbstractMiddleware`.
+
+```csharp
+public class LoggingMiddleware : AbstractMiddleware
+{
+  public override async Task Invoke(IOwinContext env)
+  {
+    Debug.WriteLine("Before execution");
+    await Next(env);
+    Debug.WriteLine("After execution");
+  }
+}
+```
+
+To write an OWIN-compliant configuration extension method, it's also simple.
+
+```csharp
+
+using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
+
+namespace Owin
+{
+  using BuildFunc = Action<Func<IDictionary<string, object>, Func<AppFunc,AppFunc>>>;
+  public static class LoggingOwinConfiguration
+  {
+    public static BuildFunc UseLogger(this BuildFunc app)
+    {˜
+      app.Use(properties => new LoggingMiddleware());
+    }
+  }
+}
+```
+
 ## Making Katana fully owin-compliant
 
-The API is currently in flux.
 
 To make Katana's implementation of `IAppBuilder` fully owin-compliant,
 install the `OpenRasta.Owin.Katana` package.
@@ -49,28 +108,3 @@ install the `OpenRasta.Owin.Katana` package.
     app.UseLogger();
   }
 ```
-
-### Writing owin-compliant middleware
-
-Using OpenRasta.Owin, it's easy to write OWIN-compliant middleware.
-
-First, you need to write the middleware, and there's a base-class for that,
-`AbstractMiddleware`.
-
-```
-  public class LoggingMiddleware : AbstractMiddleware
-  {
-    public override async Task Invoke(IOwinContext env)
-    {
-      Debug.WriteLine("Before execution");
-      await Next(env);
-      Debug.WriteLine("After execution");
-    }
-  }
-```
-
-Now you can use that middleware on any OWIN-compatible builder, using the
-support in OpenRasta.Owin.
-
-```
-  app.Use

@@ -2,28 +2,32 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Owin;
+using OpenRasta.Owin;
+using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 
 // ReSharper disable once CheckNamespace
-namespace OpenRasta.Owin
+namespace Owin
 {
+    using MidFunc = Func<AppFunc,AppFunc>;
+    using BuildFunc = Action<Func<IDictionary<string, object>, Func<AppFunc,AppFunc>>>;
     public static class MakeBuildFuncUseful
     {
-        public static AppDelegate AsTyped(this Func<IDictionary<string, object>, Task> appfunc)
+        public static AppDelegate AsTyped(this AppFunc appfunc)
         {
             return env => appfunc(env.Environment);
         }
 
-        public static Func<IDictionary<string, object>, Task> AsUntyped(this AppDelegate typedAppfunc)
+        public static AppFunc AsUntyped(this AppDelegate typedAppfunc)
         {
             return env => typedAppfunc(new OwinContext(env));
         }
 
-        public static Func<Func<IDictionary<string, object>, Task>, Func<IDictionary<string, object>, Task>> AsUntyped(this MidDelegate midDelegate)
+        public static Func<AppFunc, AppFunc> AsUntyped(this MidDelegate midDelegate)
         {
             return next => midDelegate(next.AsTyped()).AsUntyped();
         }
 
-        public static Action<Func<IDictionary<string, object>, Func<Func<IDictionary<string, object>, Task>, Func<IDictionary<string, object>, Task>>>> Use(this Action<Func<IDictionary<string, object>, Func<Func<IDictionary<string, object>, Task>, Func<IDictionary<string, object>, Task>>>> appBuilder, Func<IDictionary<string,object>, IMiddleware> middleware)
+        public static Action<Func<IDictionary<string, object>, Func<AppFunc, AppFunc>>> Use(this BuildFunc appBuilder, Func<IDictionary<string,object>, IMiddleware> middleware)
         {
             appBuilder(properties =>
             {
@@ -33,7 +37,7 @@ namespace OpenRasta.Owin
             });
             return appBuilder;
         }
-        public static Action<Func<IDictionary<string, object>, Func<Func<IDictionary<string, object>, Task>, Func<IDictionary<string, object>, Task>>>> Use(this Action<Func<IDictionary<string, object>, Func<Func<IDictionary<string, object>, Task>, Func<IDictionary<string, object>, Task>>>> appBuilder, Func<IDictionary<string,object>, MidDelegate> middleware)
+        public static Action<Func<IDictionary<string, object>, Func<AppFunc, AppFunc>>> Use(this BuildFunc appBuilder, Func<IDictionary<string,object>, MidDelegate> middleware)
         {
             appBuilder(properties => middleware(properties).AsUntyped());
             return appBuilder;

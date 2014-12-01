@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Owin;
+using OpenRasta.Owin.Katana;
 using Owin;
 
 // ReSharper disable once CheckNamespace
-namespace OpenRasta.Owin.Katana
+namespace Owin
 {
     public static class MakeKatanaUnderstandOwin
     {
