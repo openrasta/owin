@@ -12,3 +12,6 @@ configuration: Release
 test:
   assemblies:
     - Tests.dll
+
+artifacts:
+  - path: output\*.nupkg

@@ -5,11 +5,11 @@ namespace OpenRasta.Owin
 {
     public abstract class AbstractMiddleware : IMiddleware
     {
-        public AppDelegate Next { get; private set; }
+        private AppDelegate Next { get; set; }
 
         public virtual AppDelegate Compose(AppDelegate nextApplication)
         {
-            this.Next = nextApplication;
+            Next = nextApplication;
             return Invoke;
         }
 
