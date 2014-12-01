@@ -4,7 +4,7 @@ install:
   - ps: build/install.ps1
 
 nuget:
-  - project_feed: true
+  project_feed: true
 
 before-build:
   - nuget restore src/owin.sln
