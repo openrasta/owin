@@ -13,5 +13,6 @@ test:
   assemblies:
     - Tests.dll
 
-artifacts:
-  - path: output\*.nupkg
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true

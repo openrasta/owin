@@ -69,7 +69,8 @@ First, you need to write the middleware, and there's a base-class for that,
   }
 ```
 
-Now you can use that middleware on any OWIN-compatible builder.
+Now you can use that middleware on any OWIN-compatible builder, using the
+support in OpenRasta.Owin.
 
 ```
-  public class 
+  app.Use

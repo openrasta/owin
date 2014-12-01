@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenRasta.Owin")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Owin Builder by OpenRasta")]
+[assembly: AssemblyDescription("OWIN Support for all frameworks by OpenRasta")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("naughtyProd Limited")]
 [assembly: AssemblyProduct("OpenRasta.Owin")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Sebastien Lambla 2014")]
+[assembly: AssemblyTrademark("OpenRasta is a registered trademark of naughtyProd Limited. All rights reserved.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
