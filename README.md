@@ -14,11 +14,11 @@ fully OWIN-compliant.
 
 ## Installing
 
-Latest builds of Xix are available on the AppVeyor project feed, at `https://ci.appveyor.com/nuget/xix-k703x7hdb0fb`
+Latest builds of Xix are available on the AppVeyor project feed, at `https://ci.appveyor.com/nuget/owin-h2pqkbp0lbr0`
 
 To add a source, from the command line, use `nuget sources`.
 
-`C:\> nuget sources add -name or.owin -source https://ci.appveyor.com/nuget/owin-5jvo5rb83cxf`
+`C:\> nuget sources add -name or.owin -source https://ci.appveyor.com/nuget/owin-h2pqkbp0lbr0`
 
 You can then install from the package manager console.
 
