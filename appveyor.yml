@@ -27,5 +27,7 @@ assembly_info:
   assembly_informational_version: "{version}-pre"
 
 notifications:
-  - provider: WebHook
-    url: https://webhooks.gitter.im/e/0ee040a48ad8006f9f6f
+  - provider: Webhook
+    url: https://webhooks.gitter.im/e/207faaaea088565f1b89
+    on_build_success: true
+    on_build_failure: true
