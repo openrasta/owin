@@ -13,7 +13,7 @@ namespace Tests
         [Test]
         public void for_conversions()
         {
-            Assert.That(typeof (MakeBuildFuncUseful).Namespace, Is.EqualTo("Owin"));
+            Assert.That(typeof (DelegateExtensions).Namespace, Is.EqualTo("Owin"));
         }
 
         [Test]

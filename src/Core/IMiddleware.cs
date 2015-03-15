@@ -5,7 +5,7 @@ namespace OpenRasta.Owin
 {
     public interface IMiddleware
     {
-        AppDelegate Compose(AppDelegate nextApplication);
+        AppFunc Compose(AppFunc nextApplication);
         Task Invoke(IOwinContext env);
     }
 }
