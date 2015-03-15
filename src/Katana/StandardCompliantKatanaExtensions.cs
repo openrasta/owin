@@ -8,7 +8,7 @@ using BuildFunc = System.Action<System.Func<System.Collections.Generic.IDictiona
 // ReSharper disable once CheckNamespace
 namespace Owin
 {
-    public static class MakeKatanaUnderstandOwin
+    public static class StandardCompliantKatanaExtensions
     {
         public static BuildFunc Owin(this IAppBuilder appBuilder)
         {

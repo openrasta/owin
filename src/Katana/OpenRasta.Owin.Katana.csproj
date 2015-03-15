@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="AppBuilderFaker.cs" />
     <Compile Include="AppFuncMiddlewareWrapper.cs" />
-    <Compile Include="MakeKatanaUnderstandOwin.cs" />
+    <Compile Include="StandardCompliantKatanaExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
