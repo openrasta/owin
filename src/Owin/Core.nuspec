@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://github.com/openrasta/owin/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/openrasta/openrasta.github.com/master/openRastaLogo-32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2014 Sebastien Lambla</copyright>
+    <tags>Web OWIN HTTP</tags>
+  </metadata>
+</package>

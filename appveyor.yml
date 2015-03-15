@@ -1,5 +1,7 @@
 version: 0.1.{build}
 
+init:
+  - git config --global core.autocrlf input
 nuget:
   project_feed: true
 
@@ -26,4 +28,4 @@ assembly_info:
 
 notifications:
   - provider: WebHook
-    url: https://webhooks.gitter.im/e/f8aa31c0a3427ee8e6f7
+    url: https://webhooks.gitter.im/e/0ee040a48ad8006f9f6f

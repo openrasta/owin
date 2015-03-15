@@ -19,7 +19,7 @@ namespace Tests
         [Test]
         public void for_katana()
         {
-            Assert.That(typeof(MakeKatanaUnderstandOwin).Namespace, Is.EqualTo("Owin"));
+            Assert.That(typeof(StandardCompliantKatanaExtensions).Namespace, Is.EqualTo("Owin"));
         }
     }
 }

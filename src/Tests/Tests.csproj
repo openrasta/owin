@@ -72,11 +72,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\OpenRasta.Owin.csproj">
+    <ProjectReference Include="..\OpenRasta.Owin\OpenRasta.Owin.csproj">
       <Project>{FDD1F4F1-80AA-4FAF-914F-8CC9E6B1BF15}</Project>
       <Name>OpenRasta.Owin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Katana\OpenRasta.Owin.Katana.csproj">
+    <ProjectReference Include="..\OpenRasta.Owin.Katana\OpenRasta.Owin.Katana.csproj">
       <Project>{DB3CC229-1458-4B25-9BC7-866D409552C3}</Project>
       <Name>OpenRasta.Owin.Katana</Name>
     </ProjectReference>

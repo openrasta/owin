@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Owin", "Core\OpenRasta.Owin.csproj", "{FDD1F4F1-80AA-4FAF-914F-8CC9E6B1BF15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Owin", "OpenRasta.Owin\OpenRasta.Owin.csproj", "{FDD1F4F1-80AA-4FAF-914F-8CC9E6B1BF15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Owin.Katana", "Katana\OpenRasta.Owin.Katana.csproj", "{DB3CC229-1458-4B25-9BC7-866D409552C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Owin.Katana", "OpenRasta.Owin.Katana\OpenRasta.Owin.Katana.csproj", "{DB3CC229-1458-4B25-9BC7-866D409552C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{30AC0612-CD35-4DD2-AAF9-0EC822BB37CD}"
 	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
 		..\NuGet.config = ..\NuGet.config
 		..\VERSION = ..\VERSION
 	EndProjectSection
