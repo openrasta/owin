@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using LambdaAppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 using LambdaMidFunc = System.Func<System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>, System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>>;
@@ -17,9 +18,9 @@ namespace OpenRasta.Owin
         }
         public OwinApplication(Action<LambdaBuildFunc> app)
         {
-            ICollection<LambdaMidFactory> middlewareFactories = new LinkedList<LambdaMidFactory>();
+            ICollection<LambdaMidFactory> middlewareFactories = new List<LambdaMidFactory>();
             app(middlewareFactories.Add);
-            builder = ()=>middlewareFactories.Build(StartupProperties);
+            builder = ()=>middlewareFactories.ToList().Build(StartupProperties);
         }
 
         public IDictionary<string,object> StartupProperties { get; set; }
